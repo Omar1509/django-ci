@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Cursos</title>
+</head>
+<body>
+    <h1>Cursos disponibles</h1>
+    <a href="{% url 'crear_curso' %}">Crear nuevo curso</a>
+    <ul>
+        {% for curso in cursos %}
+            <li><strong>{{ curso.nombre }}</strong>: {{ curso.descripcion }}</li>
+        {% empty %}
+            <li>No hay cursos registrados.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
